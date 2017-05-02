@@ -1,0 +1,8 @@
+{
+  "dev": {
+    "BASE_URL": "http://10.66.72.141:8010",
+    "HOME": "http://localhost:4040/",
+    "API_KEY": "ATPCv3Dev",
+    "PROJECT_NAME": ["Test"]
+  }
+}

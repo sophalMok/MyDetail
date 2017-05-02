@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html data-ng-app="mydetail" lang="en" class="well">
+<head>
+    <title>My Detail Service</title>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none!important;
+        }
+    </style>
+    <link rel="stylesheet" href="css/mydetail.css" />
+</head>
+<body ng-app="mydetail">
+    <div ui-view="header"></div>
+    <div ui-view="content" class="container-fluid" ng-class="$state.current.data.contentClasses"></div>
+    <footer class="footer navbar-fixed-bottom">
+    </footer>
+
+    <!--Libraries-->
+
+    <!-- lib:js -->
+    <!-- endinject -->
+
+    <!--App-->
+
+    <!-- app:js -->
+    <!-- endinject -->
+
+    <script type="text/javascript" src="js/ngConstants.js"></script>
+    <script type="text/javascript" src="js/templates.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html data-ng-app="health" lang="en">
+<head>
+    <title>GFC</title>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none!important;
+        }
+    </style>
+    <link rel="stylesheet" href="css/health.css" />
+</head>
+<body ng-app="health">
+    <div id="logo" role="banner"
+         style="padding: 10px; vertical-align: bottom; background-color: rgb(181, 0, 0);">
+        <img src="images/target-logo-white.png" alt="target bullseye logo" style="height:2em;"
+             id="target-logo-img"/>
+    </div>
+    <footer class="footer navbar-fixed-bottom">
+        <div class="container-fluid">
+            <p class="text-muted small text-right">%%GULP_INJECT_VERSION%%</p>
+        </div>
+    </footer>
+</body>
+</html>
