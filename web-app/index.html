@@ -2,33 +2,229 @@
 <html data-ng-app="mydetail" lang="en" class="well">
 <head>
     <title>My Detail Service</title>
+    
+    
+    /* link rel stylesheet */
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     <style>
         /* This helps the ng-show/ng-hide animations start at the right place. */
         /* Since Angular has this but needs to load, this gives us the class early. */
         .ng-hide {
             display: none!important;
         }
+        
+        body li a{
+                color: black;
+            }
+            footer {
+                text-align: center;
+                font-size: 1em;
+                padding: 3%;
+                margin: 0;
+            }
+            footer p{
+                color: black;
+            }
+            body {margin:0;}
+            .topnav {
+                overflow: hidden;
+                color: black;
+                text-align: center;
+            }
+            .topnav a {
+                float: left;
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 20px 20px 20px 20px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            .topnav .icon {
+                display: none;
+            }
+            @media screen and (max-width: 700px) {
+                .topnav a:not(:first-child) {display: none;}
+                .topnav a.icon {
+                    float: right;
+                    display: block;
+                }
+            }
+            @media screen and (max-width: 700px) {
+                .topnav.responsive {position: relative;}
+                .topnav.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .topnav.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                }
+        
     </style>
     <link rel="stylesheet" href="css/mydetail.css" />
 </head>
 <body ng-app="mydetail">
     <div ui-view="header"></div>
     <div ui-view="content" class="container-fluid" ng-class="$state.current.data.contentClasses"></div>
+    
+    
+    /* the templete for home page */
+    
+    <div class="topnav" id="myTopnav">
+                    <a href="index.php">Home</a>
+                    <a href="current.html">Calender</a>
+                    <a href="app.html">Services</a>
+                    <a href="demo.php">Contact</a>
+                    <a href="about.html">About</a>
+                    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+                </div>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myTopnav");
+                        if (x.className === "topnav") {
+                            x.className += " responsive";
+                        } else {
+                            x.className = "topnav";
+                        }
+                    }
+                </script>
+                <div id="myCarousel" class="carousel slide">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="http://i149.photobucket.com/albums/s58/timcoats/timcoats018/IMG_9314.jpg" style="width:100%;height:100%" class="img-responsive">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1>SERVICE</h1>
+                                    <p>Our teams are 100% self-contained, and are fully equipped to accommodate your needs</p>
+                                    <p><a class="btn btn-lg btn-primary" href="app.html">MAKE APPOINTMENT</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src = "https://parts.audiusa.com/images/parts/VW/fullsize/ZAW-911-380_Audi_CarWashMitt.jpg" style="width:100%;height:100%" class="img-responsive">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1>QUALITY</h1>
+                                    <p>Our company is structured to provide quality, inexpensive, hassle-free car wash and detail services conveniently at your facility.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="https://audimediacenter-a.akamaihd.net/system/production/media/31201/images/01ae511761e5b1fc118cf16054a2d0eddf872834/A162854_full.jpg?1461307604" style="width:100%;height:100%" class="img-responsive">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1>AUTO DETAIL SERVICES</h1>
+                                    <p>we maintain the highest standards for ourselves, our customers.</p>
+                                    <p><a class="btn btn-large btn-primary" href="about.html">Learn more</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="http://images.car.bauercdn.com/pagefiles/28079/faceliftedaudia3-000.jpg" style="width:100%;height:100%" class="img-responsive">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1>OUR EXPERIENCE</h1>
+                                    <p>Our highly qualified and experienced technicians are trained to meet your needs and requests.</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="icon-prev"></span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="icon-next"></span>
+                    </a>  
+                </div>
+                <!-- /.carousel -->
+                <!-- Marketing messaging and featurettes
+                ================================================== -->
+                <!-- Wrap the rest of the page in another container to center all the content. -->
+                <div class="container marketing">
+                    <!-- Three columns of text below the carousel -->
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img class="img-circle" src="http://www.drk.sd23.bc.ca/About/Calendar/Documents/training.RedCalendar.jpg" style="width:45%;height:45%" class="img-responsive">
+                            <h2>Service Calender</h2>
+                            <p><span class="text-muted">Fine out when our auto detailing will be onsite at your facility and book now. ​Our teams are 100% self-contained, and are fully equipped to accommodate your needs.</span></p>
+                            <p><a class="btn btn-primary" href="current.html">Service Calender »</a></p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <img class="img-circle" src="http://o.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/http://o.aolcdn.com/commerce/autodata/images/USC70AUC153A021001.jpg" background="white" style="width:50%;height:50%" class="img-responsive">
+                            <h2>Quality & Conveniently</h2>
+                            <p><span class="text-muted">we simplify the solution for your car care needs.  Our company is structured to provide quality, inexpensive, hassle-free car wash and detail services conveniently at your facility.</span></p>                    
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <img class="image-circle" src="http://media.gettyimages.com/vectors/car-wash-man-vector-id496035871?s=612x612" style="width:50%;height:50%" class="img-responsive">
+                            <h2>Auto Detail Services</h2>
+                            <p><span class="text-muted">we maintain the highest standards for ourselves, our customers, our corporate partners and the work that we do.</span></p>
+                            <p><a class="btn btn-primary" href="app.html">Make Appointment »</a></p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <img class="img-circle" src="http://filenowpaylater.com/wp-content/uploads/2016/12/about-agarwal-enterprises.jpg" style="width:80%;height:50%" class="img-responsive">
+                            <h2>About Us</h2>
+                            <p><span class="text-muted">Our highly qualified and experienced technicians are trained to meet your needs and requests.  Our philosophy is based on quality first and quantity second.  We are a company committed to excellence.</span></p>                 
+                        </div>
+                        
+                        <div class="col-md-4 text-center">
+                            <img class="image-circle" src ="http://www.greatplacetowork.in/storage/Blogs__Events/Contact_Us_-_Logo.png" style="width:20%;height:20%" class="img-responsive">
+                            <h2>Contact us</h2>
+                            <p><span class="text-muted">Contact Number # (253) 252-0868</span></p>
+                            <p><span class="text-muted">Email: kimyouby@hotmail.com</span></p>
+                            <p><span class="text-muted">Our Location: 2251 W Maude Ave, Sunnyvale CA 94085</span></p>
+                            <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.8315341642115!2d-122.04535258502722!3d37.393816141759174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7014e849067%3A0xa0993a8d984229d2!2s2251+W+Maude+Ave%2C+Sunnyvale%2C+CA+94085!5e0!3m2!1sen!2sus!4v1494442701955" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+                        </div>
+                    </div><!-- /.row -->
+                    <!-- START THE FEATURETTES -->
+                    <hr class="featurette-divider">
+                    <div class="featurette">
+                        <h2>OUR SERVICES <span class="text-muted">It'll blow your mind!</span></h2>
+                        <p class="lead">Our experienced service team will keep your vehicle in top condition. We use the latest technology to provide high-quality service and quick turnaround. Our detailer are highly skilled and have years of experience. Most of all, they love cars and care about yours.</p>
+                    </div>
+                    <script>
+                        function myFunction() {
+                            var x = document.getElementById("myTopnav");
+                            if (x.className === "topnav") {
+                                x.className += " responsive";
+                            } else {
+                                x.className = "topnav";
+                            }
+                        }
+                    </script>
+    
     <footer class="footer navbar-fixed-bottom">
+        <p>Copyright &copy Mydetailer, 2017. </p>
     </footer>
-
     <!--Libraries-->
-
     <!-- lib:js -->
     <!-- endinject -->
-
     <!--App-->
-
     <!-- app:js -->
     <!-- endinject -->
-
     <script type="text/javascript" src="js/ngConstants.js"></script>
     <script type="text/javascript" src="js/templates.js"></script>
-
 </body>
 </html>
