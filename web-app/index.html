@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html data-ng-app="mydetail" lang="en" class="well">
+<html data-ng-app="mydetail" lang="en-US">
 
 <head>
 
@@ -9,6 +9,9 @@
 
     <!-- link rel stylesheet -->
 
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/mydetail.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
@@ -31,7 +34,8 @@
 
                 background:rgba(255,255,255,0.25);
                 background-color: #2c475c;
-                border: none;}
+                margin: none;
+                padding: none;}
 
             .nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
 
@@ -46,10 +50,6 @@
 
              color: #fff;}
 
-            .dropdown-menu{
-
-                -webkit-box-shadow: none;
-                box-shadow:none;}
 
             .nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1){
 
@@ -99,67 +99,16 @@
             margin:0;
             background-color: #f5f5f5;}
 
-            .topnav {
-                overflow: hidden;
-                color: black;
-                text-align: center;}
-
-            .topnav a {
-
-                float: left;
-                display: block;
-                color: black;
-                background-color: #f5f5f5;
-                text-align: center;
-                padding: 20px 20px 20px 20px;
-                text-decoration: none;
-                font-size: 17px;}
-
-            .topnav ul a {
-
-                float: right;
-                display: block;
-                color: black;
-                text-align: center;
-                padding: 20px 20px 20px 20px;
-                text-decoration: none;
-                font-size: 17px;}
-
-            .topnav a:hover {
-
-                background-color: #ddd;
-                color: black;}
-
-            .topnav .icon {display: none;}
 
             footer {
 
                 text-align: center;
                 font-size: 1em;
-                padding: 3%;
+                padding: 15px;
                 margin: 0;}
 
             footer p{color: black;}
 
-            @media screen and (max-width: 640px) {
-                .topnav a:not(:first-child) {display: none;}
-                .topnav a.icon {
-                    float: right;
-                    display: block;
-                }
-            }
-            @media screen and (max-width: 700px) {
-                .topnav.responsive {position: relative;}
-                .topnav.responsive .icon {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                }
-                .topnav.responsive a {
-                    float: none;
-                    display: block;
-                    text-align: left;
-                }
 
     </style>
 
@@ -169,6 +118,7 @@
 
     <div ui-view="header"></div>
 
+
     <div ui-view="content" class="container-fluid" ng-class="$state.current.data.contentClasses"></div>
 
             <!-- image/log-->
@@ -176,22 +126,23 @@
             <!-- dropdown menu -->
 
 
-<div class="navbar-wrapper" id="topnav">
-    <div class="container-fluid">
-        <nav class="navbar navbar-fixed-top">
+    <nav class="navbar navbar-fixed-top navbar-light bg-faded">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
+
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <img src="http://nebula.wsimg.com/ddbc4afbef2a15c93834f06cf0c70517?AccessKeyId=FD005003AB80FEB3E34F&disposition=0&alloworigin=1"style="width:100px;height:60px;" class="img-responsive">
+
+                    <a class="navbar-brand" href="#">
+                        <img src="images/MyDetailer.png" alt="Car" style="width:80px;height:40px;" class="img-responsive">
+                    </a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
+                <div class="collapse navbar-collapse " id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="" >Home</a></li>
+                        <li class="active"><a href="" >HOME</a></li>
                         <li class=" dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RATE & SERVICES <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -206,33 +157,20 @@
 
                     </ul>
 
-                    <ul class="nav navbar-nav pull-right">
+                    <ul class="nav navbar-nav navbar-right">
                         <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Change Password</a></li>
                                 <li><a href="#">My Profile</a></li>
                             </ul>
                         </li>
-                        <li class=""><a href="#">Logout</a></li>
+                        <li class=""><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                     </ul>
                 </div>
             </div>
-        </nav>
-    </div>
-</div>
+     </nav>
 
-
-                <script>
-
-                    function myFunction() {
-                        var x = document.getElementById("myTopnav");
-                        if (x.className === "topnav") {
-                            x.className += " responsive";
-                        } else {
-                            x.className = "topnav";
-                        }
-                    }
-                </script>
+<hr class="featurette-divider">
 
 <div id="myCarousel" class="carousel slide">
 
@@ -300,19 +238,20 @@
 ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
+<hr class="featurette-divider">
 <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
 
     <div class="row">
         <div class="col-md-3 text-center">
-            <img class="img-circle" src="http://www.drk.sd23.bc.ca/About/Calendar/Documents/training.RedCalendar.jpg" style="width:45%;height:45%" class="img-responsive">
+            <img class="image-circle" src="http://www.drk.sd23.bc.ca/About/Calendar/Documents/training.RedCalendar.jpg" style="width:45%;height:45%" class="img-responsive">
             <h2>Service <span class="text-muted">Calender</span></h2>
             <p><span class="text-muted">Fine out when our auto detailing will be onsite at your facility and book now. Our teams are 100% self-contained, and are fully equipped to accommodate your needs.</span></p>
             <p><a class="btn btn-primary" href="current.html">Service Calender >></a></p>
         </div>
         <div class="col-md-3 text-center">
-            <img class="img-circle" src="http://o.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/http://o.aolcdn.com/commerce/autodata/images/USC70AUC153A021001.jpg" background="white" style="width:50%;height:50%" class="img-responsive">
+            <img class="image-circle" src="http://o.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/http://o.aolcdn.com/commerce/autodata/images/USC70AUC153A021001.jpg" background="white" style="width:50%;height:50%" class="img-responsive">
             <h2>Quality & <span class="text-muted">Conveniently</span></h2>
             <p><span class="text-muted">we simplify the solution for your car care needs.  Our company is structured to provide quality, inexpensive, hassle-free car wash and detail services conveniently at your facility.</span></p>
         </div>
@@ -323,7 +262,7 @@
             <p><a class="btn btn-primary" href="app.html">Make Appointment >></a></p>
         </div>
         <div class="col-md-3 text-center">
-            <img class="img-circle" src="http://filenowpaylater.com/wp-content/uploads/2016/12/about-agarwal-enterprises.jpg" style="width:80%;height:50%" class="img-responsive">
+            <img class="image-circle" src="http://nebula.wsimg.com/ddbc4afbef2a15c93834f06cf0c70517?AccessKeyId=FD005003AB80FEB3E34F&disposition=0&alloworigin=1" style="width:50%;height:50%" class="img-responsive">
             <h2>About <span class="text-muted">Us</span></h2>
             <p><span class="text-muted">Our highly qualified and experienced technicians are trained to meet your needs and requests.  Our philosophy is based on quality first and quantity second.  We are a company committed to excellence.</span></p>
         </div>
@@ -334,15 +273,15 @@
             <p><span class="text-muted">Contact Number # (253) 252-0868</span></p>
             <p><span class="text-muted">Email: kimyouby@hotmail.com</span></p>
             <p><span class="text-muted">Our Location: 2251 W Maude Ave, Sunnyvale CA 94085</span></p>
-            <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.8315341642115!2d-122.04535258502722!3d37.393816141759174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7014e849067%3A0xa0993a8d984229d2!2s2251+W+Maude+Ave%2C+Sunnyvale%2C+CA+94085!5e0!3m2!1sen!2sus!4v1494442701955" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+            <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.8315341642115!2d-122.04535258502722!3d37.393816141759174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7014e849067%3A0xa0993a8d984229d2!2s2251+W+Maude+Ave%2C+Sunnyvale%2C+CA+94085!5e0!3m2!1sen!2sus!4v1494442701955" width="300px" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe></p>
         </div>
     </div>
     <!-- /.row -->
 
 </div>
     <!-- START THE FEATURETTES -->
-
     <hr class="featurette-divider">
+    <div class="container marketing">
     <div class="featurette">
         <div class="row">
             <div class="col-md-6">
@@ -366,6 +305,7 @@
     </div>
 
             <div class="col-md-6">
+
         <h2>REVIEWS </h2>
 
                 <p class="lead">We offer honest and reliable auto detail, and we like to think we do it right. But, don’t just take our word for it--our customers give us rave reviews!</p>
@@ -384,21 +324,9 @@
             </div>
         </div>
     </div>
-
-
-                    <script>
-
-                        function myFunction() {
-                            var x = document.getElementById("myTopnav");
-                            if (x.className === "topnav") {
-                                x.className += " responsive";
-                            } else {
-                                x.className = "topnav";
-                            }
-                        }
-                    </script>
-
-    <footer>
+    </div>
+    <hr class="featurette-divider">
+    <footer class="container-fluid text-center">
         <p>Copyright &copy Mydetailer, 2017. All Rights Reserved.</p>
     </footer>
 
