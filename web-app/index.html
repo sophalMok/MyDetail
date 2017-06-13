@@ -12,10 +12,13 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Keywords" content="HTML,CSS,JavaScript,SQL,PHP,jQuery,XML,DOM,Bootstrap,Web development,W3C,tutorials,programming,training,learning,quiz,primer,lessons,references,examples,source code,colors,demos,tips">
+
     <link rel="stylesheet" href="css/mydetail.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/ngConstants.js"></script>
@@ -57,23 +60,23 @@
 
             .nav li:hover:nth-child(8n+2), .nav li.active:nth-child(8n+2){
 
-              border-bottom: #F7FDCA 3px solid;}
+              border-bottom: #FECF71 3px solid;}
 
             .nav li:hover:nth-child(8n+3), .nav li.active:nth-child(8n+3){
 
-              border-bottom: #FECF71 3px solid;}
+              border-bottom: #F0776C 3px solid;}
 
             .nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4){
 
-              border-bottom: #F0776C 3px solid;}
+              border-bottom: #F7FDCA 3px solid;}
 
             .nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5){
 
-              border-bottom: #DB9DBE 3px solid;}
+              border-bottom: #62C2E4 3px solid;}
 
             .nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6){
 
-              border-bottom: #C49CDE 3px solid;}
+              border-bottom: #DB9DBE 3px solid;}
 
             .nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7){
 
@@ -90,7 +93,7 @@
             }
 
 
-            h2 {color: #7f0000;}
+            h2,a{color: #7f0000;}
 
             body li a{color: black;}
 
@@ -104,10 +107,10 @@
 
                 text-align: center;
                 font-size: 1em;
-                padding: 15px;
-                margin: 0;}
+                margin: none;}
 
-            footer p{color: black;}
+            footer p{
+            color: #fff;}
 
 
     </style>
@@ -125,10 +128,14 @@
             <!-- navigation -->
             <!-- dropdown menu -->
 
-
+    <hr class="featurette-divider">
     <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-            <div class="container">
-                <div class="navbar-header">
+
+        <div class="container-fluid">
+            <p><a class="font-color:#fff"> 408-666-8169 </a></p>
+            <p><a class="font-color:#fff"> 283 MARK TWAIN CT. SANTA CLARA CA 95050 US </a></p>
+            <hr class="featurette-divider">
+            <div class="navbar-header">
 
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
@@ -141,10 +148,10 @@
                     </a>
                 </div>
                 <div class="collapse navbar-collapse " id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="" >HOME</a></li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href=""><span class="glyphicon glyphicon-home"></span></a></li>
                         <li class=" dropdown">
-                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">RATE & SERVICES <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rate & Services <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li class=" dropdown">
                                     <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Make Appointment</a>
@@ -152,12 +159,12 @@
                                 <li><a href="#">Services</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">CONTACT</a></li>
-                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
 
-                    </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
+
+
                         <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Change Password</a></li>
@@ -170,7 +177,6 @@
             </div>
      </nav>
 
-<hr class="featurette-divider">
 
 <div id="myCarousel" class="carousel slide">
 
@@ -188,7 +194,7 @@
                 <div class="carousel-caption">
                     <h1>SERVICE</h1>
                     <p>Our teams are 100% self-contained, and are fully equipped to accommodate your needs</p>
-                    <p><a class="btn btn-lg btn-primary" href="app.html">MAKE APPOINTMENT</a>
+                    <p><a class="btn btn-lg btn-primary" href="app.html">MAKE APPOINTMENT <span class="glyphicon glyphicon-chevron-right"></span></a>
                     </p>
                 </div>
             </div>
@@ -238,49 +244,42 @@
 ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<hr class="featurette-divider">
-<div class="container marketing">
 
+<div class="container-fluid marketing" style="background: #fff">
+    <hr class="featurette-divider">
     <!-- Three columns of text below the carousel -->
 
     <div class="row">
         <div class="col-md-3 text-center">
-            <img class="image-circle" src="http://www.drk.sd23.bc.ca/About/Calendar/Documents/training.RedCalendar.jpg" style="width:45%;height:45%" class="img-responsive">
+            <img class="image-circle" src="images/calendar-icon.png" alt="calender" style="width:35%;height:30%; background: solid transparent; border:0;" class="img-responsive">
             <h2>Service <span class="text-muted">Calender</span></h2>
             <p><span class="text-muted">Fine out when our auto detailing will be onsite at your facility and book now. Our teams are 100% self-contained, and are fully equipped to accommodate your needs.</span></p>
-            <p><a class="btn btn-primary" href="current.html">Service Calender >></a></p>
+            <p><a class="btn btn-primary" href="current.html">Service Calender »</a></p>
         </div>
         <div class="col-md-3 text-center">
-            <img class="image-circle" src="http://o.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/788x525/quality/85/http://o.aolcdn.com/commerce/autodata/images/USC70AUC153A021001.jpg" background="white" style="width:50%;height:50%" class="img-responsive">
+            <img class="image-circle" src="images/audi.png" style="width:55%;height:50%" class="img-responsive">
             <h2>Quality & <span class="text-muted">Conveniently</span></h2>
             <p><span class="text-muted">we simplify the solution for your car care needs.  Our company is structured to provide quality, inexpensive, hassle-free car wash and detail services conveniently at your facility.</span></p>
         </div>
         <div class="col-md-3 text-center">
-            <img class="image-circle" src="http://media.gettyimages.com/vectors/car-wash-man-vector-id496035871?s=612x612" style="width:50%;height:50%" class="img-responsive">
+            <img class="image-circle" src="http://media.gettyimages.com/vectors/car-wash-man-vector-id496035871?s=612x612" style="width:50%;height:50%;" class="img-responsive">
             <h2>Auto Detail <span class="text-muted">Services</span></h2>
             <p><span class="text-muted">we maintain the highest standards for ourselves, our customers, our corporate partners and the work that we do.</span></p>
-            <p><a class="btn btn-primary" href="app.html">Make Appointment >></a></p>
+            <p><a class="btn btn-primary" href="app.html">Make Appointment »</a></p>
         </div>
         <div class="col-md-3 text-center">
-            <img class="image-circle" src="http://nebula.wsimg.com/ddbc4afbef2a15c93834f06cf0c70517?AccessKeyId=FD005003AB80FEB3E34F&disposition=0&alloworigin=1" style="width:50%;height:50%" class="img-responsive">
-            <h2>About <span class="text-muted">Us</span></h2>
+            <img class="image-circle" src="http://nebula.wsimg.com/ddbc4afbef2a15c93834f06cf0c70517?AccessKeyId=FD005003AB80FEB3E34F&disposition=0&alloworigin=1" style="width:55%;height:50%" class="img-responsive">
+            <h2><a href="about.html">About <span class="text-muted">Us</span></a></h2>
             <p><span class="text-muted">Our highly qualified and experienced technicians are trained to meet your needs and requests.  Our philosophy is based on quality first and quantity second.  We are a company committed to excellence.</span></p>
         </div>
-
-        <div class="col-md-4 text-center">
-            <img class="image-circle" src ="http://www.greatplacetowork.in/storage/Blogs__Events/Contact_Us_-_Logo.png" style="width:20%;height:20%" class="img-responsive">
-            <h2>Contact us</h2>
-            <p><span class="text-muted">Contact Number # (253) 252-0868</span></p>
-            <p><span class="text-muted">Email: kimyouby@hotmail.com</span></p>
-            <p><span class="text-muted">Our Location: 2251 W Maude Ave, Sunnyvale CA 94085</span></p>
-            <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.8315341642115!2d-122.04535258502722!3d37.393816141759174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7014e849067%3A0xa0993a8d984229d2!2s2251+W+Maude+Ave%2C+Sunnyvale%2C+CA+94085!5e0!3m2!1sen!2sus!4v1494442701955" width="300px" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe></p>
-        </div>
     </div>
+
     <!-- /.row -->
 
 </div>
-    <!-- START THE FEATURETTES -->
     <hr class="featurette-divider">
+    <!-- START THE FEATURETTES -->
+
     <div class="container marketing">
     <div class="featurette">
         <div class="row">
@@ -326,8 +325,8 @@
     </div>
     </div>
     <hr class="featurette-divider">
-    <footer class="container-fluid text-center">
-        <p>Copyright &copy Mydetailer, 2017. All Rights Reserved.</p>
+    <footer class="footer container-fluid text-center">
+        <p>Copyright &copy 2017 MyDetailer. All Rights Reserved.</p>
     </footer>
 
     <!--Libraries-->
