@@ -12,13 +12,12 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Keywords" content="HTML,CSS,JavaScript,SQL,PHP,jQuery,XML,DOM,Bootstrap,Web development,W3C,tutorials,programming,training,learning,quiz,primer,lessons,references,examples,source code,colors,demos,tips">
 
     <link rel="stylesheet" href="css/mydetail.css">
+    <link rel="stylesheet" href="app/mydetail.js">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/ngConstants.js"></script>
@@ -33,16 +32,28 @@
 
                 display: none!important;}
 
-            .navbar, .dropdown-menu{
 
-                background:rgba(255,255,255,0.25);
-                background-color: #2c475c;
+
+            .navbar {
+
+                font-size: 1em;
+                background: #f5f5f5;
                 margin: none;
-                padding: none;}
+                padding-top: 15px;}
 
-            .nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
+            .dropdown-menu{
 
-              border-bottom: 3px solid transparent;}
+                background: #fff;
+            }
+
+            .nav>li>a {
+
+              border-bottom: 3px solid transparent;
+              padding-bottom: 15px;}
+
+             .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
+
+             border-bottom: 3px solid transparent;}
 
             .nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
 
@@ -51,8 +62,9 @@
 
             .navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .navbar-toggle{
 
-             color: #fff;}
-
+             font-family: "Trebuchet MS", sans-serif !important;
+             font-size: 1.1em;
+             color: #2c475c;}
 
             .nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1){
 
@@ -68,15 +80,13 @@
 
             .nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4){
 
-              border-bottom: #F7FDCA 3px solid;}
+              border-bottom: #007882 3px solid;}
 
             .nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5){
 
               border-bottom: #62C2E4 3px solid;}
 
-            .nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6){
 
-              border-bottom: #DB9DBE 3px solid;}
 
             .nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7){
 
@@ -88,29 +98,29 @@
 
             .navbar-toggle .icon-bar{
 
-                color: #fff;
-                background: #fff;
+                color: #2c475c;
+                background: #2c475c;
             }
 
 
-            h2,a{color: #7f0000;}
+            h2 p,a {
 
-            body li a{color: black;}
+            padding: 0px 0px 15px 0px;
+            font-size: 0.8em;
+            color: #7f0000;}
 
             body {
 
+            font-family: "Trebuchet MS", sans-serif !important;
             margin:0;
             background-color: #f5f5f5;}
 
+            body li a {color: black;}
 
-            footer {
+            ul li a {
 
-                text-align: center;
-                font-size: 1em;
-                margin: none;}
-
-            footer p{
-            color: #fff;}
+            font-size: 1.2em;
+            color: #7f0000; }
 
 
     </style>
@@ -119,22 +129,19 @@
 
     <body ng-app="mydetail">
 
-    <div ui-view="header"></div>
+    <div ui-view="header">
 
 
-    <div ui-view="content" class="container-fluid" ng-class="$state.current.data.contentClasses"></div>
+    <div ui-view="content" class="container-fluid" ng-class="$state.current.data.contentClasses">
 
             <!-- image/log-->
             <!-- navigation -->
             <!-- dropdown menu -->
 
-    <hr class="featurette-divider">
     <nav class="navbar navbar-fixed-top navbar-light bg-faded">
 
-        <div class="container-fluid">
-            <p><a class="font-color:#fff"> 408-666-8169 </a></p>
-            <p><a class="font-color:#fff"> 283 MARK TWAIN CT. SANTA CLARA CA 95050 US </a></p>
-            <hr class="featurette-divider">
+        <div class="container">
+
             <div class="navbar-header">
 
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -151,34 +158,39 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href=""><span class="glyphicon glyphicon-home"></span></a></li>
                         <li class=" dropdown">
-                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rate & Services <span class="caret"></span></a>
+                            <a href="#" class=" text-uppercase dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li class=" dropdown">
-                                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Make Appointment</a>
+                                    <a href="#">Rate </a>
                                 </li>
-                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Services </a>
+                                </li>
+                                <li><a href="#">Make Appointment </a>
+                                </li>
                             </ul>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html" class="text-uppercase">About </a></li>
+                        <li><a href="contact.html" class="text-uppercase">Contact </a></li>
 
 
 
 
-                        <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in <span class="caret"></span></a>
+                        <li class=" dropdown"><a href="#" class=" text-uppercase dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign in <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Change Password</a></li>
-                                <li><a href="#">My Profile</a></li>
+                                <li><a href="#">My Profile </a></li>
+                                <li><a href="#">Change Password </a></li>
                             </ul>
                         </li>
-                        <li class=""><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                        <li><a href="#" class="text-uppercase" style="color:#fff; background:#007882; border-radius: 6px !important;">Become a member </a></li>
                     </ul>
                 </div>
             </div>
      </nav>
+    </div>
+    </div>
 
 
-<div id="myCarousel" class="carousel slide">
+<div id="myCarousel" class="carousel slide" style="padding: 50px 0px 0px 0px">
 
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -194,7 +206,7 @@
                 <div class="carousel-caption">
                     <h1>SERVICE</h1>
                     <p>Our teams are 100% self-contained, and are fully equipped to accommodate your needs</p>
-                    <p><a class="btn btn-lg btn-primary" href="app.html">MAKE APPOINTMENT <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <p><a class="btn btn-md btn-primary" href="app.html">MAKE APPOINTMENT <span class="glyphicon glyphicon-chevron-right"></span></a>
                     </p>
                 </div>
             </div>
@@ -214,7 +226,7 @@
                 <div class="carousel-caption">
                     <h1>AUTO DETAIL SERVICES</h1>
                     <p>we maintain the highest standards for ourselves, our customers.</p>
-                    <p><a class="btn btn-lg btn-primary" href="about.html">Learn more</a></p>
+                    <p><a class="btn btn-md btn-primary" href="about.html">Learn more</a></p>
                 </div>
             </div>
         </div>
@@ -245,46 +257,46 @@
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
 
-<div class="container-fluid marketing" style="background: #fff">
-    <hr class="featurette-divider">
+<div class="container-fluid row-field-space">
+
     <!-- Three columns of text below the carousel -->
 
     <div class="row">
         <div class="col-md-3 text-center">
             <img class="image-circle" src="images/calendar-icon.png" alt="calender" style="width:35%;height:30%; background: solid transparent; border:0;" class="img-responsive">
-            <h2>Service <span class="text-muted">Calender</span></h2>
-            <p><span class="text-muted">Fine out when our auto detailing will be onsite at your facility and book now. Our teams are 100% self-contained, and are fully equipped to accommodate your needs.</span></p>
+            <h2><p>Service <span class="text-muted">Calender</span></p></h2>
+            <p class="text-left">Fine out when our auto detailing will be onsite at your facility and book now. Our teams are 100% self-contained, and are fully equipped to accommodate your needs.</p>
             <p><a class="btn btn-primary" href="current.html">Service Calender »</a></p>
         </div>
         <div class="col-md-3 text-center">
             <img class="image-circle" src="images/audi.png" style="width:55%;height:50%" class="img-responsive">
-            <h2>Quality & <span class="text-muted">Conveniently</span></h2>
-            <p><span class="text-muted">we simplify the solution for your car care needs.  Our company is structured to provide quality, inexpensive, hassle-free car wash and detail services conveniently at your facility.</span></p>
+            <h2><p>Quality & <span class="text-muted">Conveniently</span></p></h2>
+            <p class="text-left">We simplify the solution for your car care needs.  Our company is structured to provide quality, inexpensive, hassle-free car wash and detail services conveniently at your facility.</p>
         </div>
         <div class="col-md-3 text-center">
             <img class="image-circle" src="http://media.gettyimages.com/vectors/car-wash-man-vector-id496035871?s=612x612" style="width:50%;height:50%;" class="img-responsive">
-            <h2>Auto Detail <span class="text-muted">Services</span></h2>
-            <p><span class="text-muted">we maintain the highest standards for ourselves, our customers, our corporate partners and the work that we do.</span></p>
+            <h2><p>Auto Detail <span class="text-muted">Services</span></p></h2>
+            <p class="text-left">We maintain the highest standards for ourselves, our customers, our corporate partners and the work that we do.</p>
             <p><a class="btn btn-primary" href="app.html">Make Appointment »</a></p>
         </div>
         <div class="col-md-3 text-center">
-            <img class="image-circle" src="http://nebula.wsimg.com/ddbc4afbef2a15c93834f06cf0c70517?AccessKeyId=FD005003AB80FEB3E34F&disposition=0&alloworigin=1" style="width:55%;height:50%" class="img-responsive">
-            <h2><a href="about.html">About <span class="text-muted">Us</span></a></h2>
-            <p><span class="text-muted">Our highly qualified and experienced technicians are trained to meet your needs and requests.  Our philosophy is based on quality first and quantity second.  We are a company committed to excellence.</span></p>
+            <img class="image-circle" src="http://nebula.wsimg.com/ddbc4afbef2a15c93834f06cf0c70517?AccessKeyId=FD005003AB80FEB3E34F&disposition=0&alloworigin=1" style="width:54%;height:50%" class="img-responsive">
+            <h2><p>About <span class="text-muted">Us</span></p></h2>
+            <p class="text-left">Our highly qualified and experienced technicians are trained to meet your needs and requests.  Our philosophy is based on quality first and quantity second.  We are a company committed to excellence.</p>
         </div>
     </div>
 
     <!-- /.row -->
 
 </div>
-    <hr class="featurette-divider">
     <!-- START THE FEATURETTES -->
 
-    <div class="container marketing">
+    <div class="container-fluid " style="background:#f5f5f5">
     <div class="featurette">
-        <div class="row">
-            <div class="col-md-6">
-        <h2>OUR SERVICES <span class="text-muted">It'll blow your mind!</span></h2>
+        <div class="row-field-space ">
+
+            <div class="col-md-6 py-4">
+                <h2><p>OUR SERVICES <span class="text-muted">It'll blow your mind!</span></p></h2>
         <p class="lead">Our experienced service team will keep your vehicle in top condition. We use the latest technology to provide high-quality service and quick turnaround. Our detailer are highly skilled and have years of experience. Most of all, they love cars and care about yours.</p>
         <ul>
             <li><a>Auto Detail</a></li>
@@ -303,11 +315,11 @@
         </ul>
     </div>
 
-            <div class="col-md-6">
+            <div class="col-sm-5 py-4 pill-text">
 
-        <h2>REVIEWS </h2>
+                <h2><p>REVIEWS </p></h2>
 
-                <p class="lead">We offer honest and reliable auto detail, and we like to think we do it right. But, don’t just take our word for it--our customers give us rave reviews!</p>
+                <p class="lead">We offer honest and reliable auto detail, and we like to think we do it right. But, don’t just take our word for it. Our customers give us rave reviews!</p>
 
         <p class="lead"> Whether it's our quick, quality, friendly service or the honesty and value we bring to every interaction, our customers love us.</p>
 
@@ -324,9 +336,25 @@
         </div>
     </div>
     </div>
-    <hr class="featurette-divider">
-    <footer class="footer container-fluid text-center">
+
+    <footer class=" footer row container-fluid">
+
+            <div class="col-sm-4">
         <p>Copyright &copy 2017 MyDetailer. All Rights Reserved.</p>
+            </div>
+            <div class="col-sm-3">
+                <p>Privacy Policy</p>
+            </div>
+            <div class="col-sm-2 text-left">
+                <p>About</p>
+                <p>Contact</p>
+                <p>Rate & Service</p>
+            </div>
+
+            <div class="col-sm-2">
+                <p>Like us on facebook</p>
+            </div>
+
     </footer>
 
     <!--Libraries-->
@@ -336,5 +364,5 @@
     <!-- app:js -->
     <!-- endinject -->
 
-</body>
+    </body>
 </html>
